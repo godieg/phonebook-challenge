@@ -1,0 +1,30 @@
+# Server Config
+server:
+  port: 8080
+  error:
+    path: /error
+    whitelabel:
+      enabled: false
+
+spring:
+  security:
+    user:
+      name: livevox
+  application:
+    name: PhoneBook App
+  thymeleaf:
+    enabled: true
+    #suffix: .html
+    prefix: classpath:/templates/
+  mvc:
+    favicon:
+      enabled: false
+
+#  spring.jpa.generate-ddl=true
+#  spring.jpa.hibernate.ddl-auto=update
+logging:
+  path: ${java.io.tmpdir}
+  file:
+    name: phonebook-challenge.log
+    max-size: 5MB
+  level.org.springframework.web: debug
