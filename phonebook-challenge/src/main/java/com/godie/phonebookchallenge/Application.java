@@ -1,13 +1,13 @@
-package com.godie.phonebookchallenge.app;
+package com.godie.phonebookchallenge;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication(scanBasePackages = "com.godie.phonebookchallenge")
-public class PhonebookChallengeApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PhonebookChallengeApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
