@@ -1,0 +1,1 @@
+CREATE SCHEMA `phonebookdb` DEFAULT CHARACTER SET utf8;

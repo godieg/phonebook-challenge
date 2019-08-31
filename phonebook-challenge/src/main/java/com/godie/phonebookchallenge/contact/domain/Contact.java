@@ -16,7 +16,7 @@ public class Contact implements Serializable {
     private static final long serialVersionUID = 9146262620729858213L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "firstname", nullable = false)
