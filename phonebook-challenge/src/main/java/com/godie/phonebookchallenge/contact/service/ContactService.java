@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface ContactService {
 
-    void add(Contact contact);
+    Contact add(Contact contact);
 
     Iterable<Contact> findAll();
 

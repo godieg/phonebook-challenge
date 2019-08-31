@@ -4,8 +4,6 @@ import com.godie.phonebookchallenge.contact.dao.ContactDao;
 import com.godie.phonebookchallenge.contact.domain.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -19,8 +17,8 @@ public class ContactServiceImpl implements ContactService {
     private ContactDao contactDao;
 
     @Override
-    public void add(Contact contact) {
-        contactDao.save(contact);
+    public Contact add(Contact contact) {
+        return contactDao.save(contact);
     }
 
     @Override
@@ -32,4 +30,5 @@ public class ContactServiceImpl implements ContactService {
     public List<Contact> findByCriteria(String keyword) {
         return contactDao.findByCriteria(keyword);
     }
+
 }
