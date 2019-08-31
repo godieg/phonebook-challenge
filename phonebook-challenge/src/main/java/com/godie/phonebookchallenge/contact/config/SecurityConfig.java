@@ -1,4 +1,4 @@
-package com.godie.phonebookchallenge.config;
+package com.godie.phonebookchallenge.contact.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

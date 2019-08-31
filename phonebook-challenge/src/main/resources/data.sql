@@ -1,5 +1,2 @@
-INSERT INTO billionaires (first_name, last_name, career) VALUES
-  ('Aliko', 'Dangote', 'Billionaire Industrialist'),
-  ('Bill', 'Gates', 'Billionaire Tech Entrepreneur'),
-  ('Jeff', 'Bezos', 'Billionaire Tech Entrepreneur'),
-  ('Folrunsho', 'Alakija', 'Billionaire Oil Magnate');
+INSERT INTO contacts (firstname, lastname, phone) VALUES
+  ('Diego', 'Garcia', '(415) 555-2671');

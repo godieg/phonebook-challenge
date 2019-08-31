@@ -1,4 +1,4 @@
-package com.godie.phonebookchallenge;
+package com.godie.phonebookchallenge.contact;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

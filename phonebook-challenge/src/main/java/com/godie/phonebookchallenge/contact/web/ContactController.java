@@ -1,4 +1,4 @@
-package com.godie.phonebookchallenge.web;
+package com.godie.phonebookchallenge.contact.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
