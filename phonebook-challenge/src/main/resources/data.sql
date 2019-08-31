@@ -1,2 +1,2 @@
-INSERT INTO contacts (firstname, lastname, phone) VALUES
+INSERT INTO contact (firstname, lastname, phone) VALUES
   ('Diego', 'Garcia', '(415) 555-2671');

@@ -21,7 +21,8 @@ spring:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:phonebookdb
     username: livevox
-    password: 20190831**
+    # empty password only for development
+    password:
   h2:
     console:
       enabled: true
