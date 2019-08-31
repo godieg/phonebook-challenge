@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * Created by Diego Garcia on 8/31/19.
  */
-@Entity
+@Entity(name = "contacts")
 public class Contact implements Serializable {
 
     private static final long serialVersionUID = 9146262620729858213L;

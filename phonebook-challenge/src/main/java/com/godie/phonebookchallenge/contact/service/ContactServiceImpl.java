@@ -29,7 +29,7 @@ public class ContactServiceImpl implements ContactService {
     }
 
     @Override
-    public List<Contact> findByQuery(String query) {
-        return contactDao.findByQuery(query);
+    public List<Contact> findByCriteria(String keyword) {
+        return contactDao.findByCriteria(keyword);
     }
 }

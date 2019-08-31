@@ -24,7 +24,6 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void add(@RequestBody Contact contact) {
@@ -39,8 +38,8 @@ public class ContactController {
 
     @GetMapping("/search")
     @ResponseStatus(HttpStatus.OK)
-    public List<Contact> findByQuery(@RequestParam String query) {
-        return contactService.findByQuery(query);
+    public List<Contact> search(@RequestParam String query) {
+        return contactService.findByCriteria(query);
     }
 
 }

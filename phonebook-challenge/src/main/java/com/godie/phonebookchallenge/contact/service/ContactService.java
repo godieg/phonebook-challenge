@@ -13,6 +13,6 @@ public interface ContactService {
 
     Iterable<Contact> findAll();
 
-    List<Contact> findByQuery(String query);
+    List<Contact> findByCriteria(String keyword);
 
 }

@@ -14,15 +14,8 @@ import java.util.List;
 @Repository
 public interface ContactDao extends CrudRepository<Contact, Long> {
 
-    // extends Repository<Contact, Long>
-
-    /*Contact save(Contact contact);
-
-    Iterable<Contact> findAll();
-
-    List<Contact> findByQuery(String query);*/
-
-    @Query(value="select * from Contact c where c.firstname like %:keyword% or c.lastname like %:keyword%", nativeQuery=true)
-    List<Contact> findByQuery(@Param("keyword") String keyword);
-
+    @Query(value="SELECT * FROM contacts c WHERE c.firstname LIKE %:keyword% " +
+            "OR c.lastname LIKE %:keyword% " +
+            "OR c.phone LIKE %:keyword%", nativeQuery=true)
+    List<Contact> findByCriteria(@Param("keyword") String keyword);
 }
