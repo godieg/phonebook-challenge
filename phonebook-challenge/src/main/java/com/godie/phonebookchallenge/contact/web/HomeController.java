@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
+    /**
+     * Method to index path.
+     * @return
+     */
     @GetMapping("/")
     public String homePage() {
         return "index";

@@ -61,7 +61,11 @@ export default class Contacts extends Component {
         this.setState({ contacts: response.data });
       })
       .catch(function(error) {
-        swal("Error!", error.message, "error");
+        swal(
+          "Oops, something went wrong",
+          error.message,
+          "error"
+        );
       });
   }
 
@@ -79,7 +83,11 @@ export default class Contacts extends Component {
       contact.lastName === "" ||
       contact.phone === ""
     ) {
-      swal("Error!", "Contact information is required.", "error");
+      swal(
+        "Oops, something went wrong",
+        "Contact information is required.",
+        "error"
+      );
       return;
     }
 
@@ -95,7 +103,11 @@ export default class Contacts extends Component {
         );
       })
       .catch(error => {
-        swal("Error!", error.message, "error");
+        swal(
+          "Oops, something went wrong",
+          error.message,
+          "error"
+        );
       });
 
     this.setState({
@@ -118,7 +130,11 @@ export default class Contacts extends Component {
         this.setState({ contacts: response.data });
       })
       .catch(function(error) {
-        swal("Error!", error.message, "error");
+        swal(
+          "Oops, something went wrong",
+          error.message,
+          "error"
+        );
       });
 
     this.setState({

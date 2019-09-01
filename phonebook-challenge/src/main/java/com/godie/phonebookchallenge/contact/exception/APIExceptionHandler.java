@@ -18,6 +18,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * API Exception Handler to manage the error response to API Client.
  * Created by Diego Garcia on 9/1/19.
  */
 @ControllerAdvice

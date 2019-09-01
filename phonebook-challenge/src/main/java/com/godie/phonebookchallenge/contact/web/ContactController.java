@@ -18,6 +18,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 /**
+ * API Rest Controller to manage contacts.
  * Created by Diego Garcia on 8/31/19.
  */
 @CrossOrigin(origins = "http://localhost:3000")
