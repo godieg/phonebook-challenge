@@ -55,9 +55,9 @@ public class ContactController {
      */
     @GetMapping("/search")
     ResponseEntity<List<Contact>> search(@RequestParam String query) {
-        if (StringUtils.isEmpty(query)) {
+        /*if (StringUtils.isEmpty(query)) {
             return ResponseEntity.badRequest().body(null);
-        }
+        }*/
         return ResponseEntity.ok(contactService.findByCriteria(query));
     }
 

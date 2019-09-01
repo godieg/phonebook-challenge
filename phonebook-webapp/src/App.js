@@ -1,12 +1,7 @@
 import React, { Component } from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./index.css";
 
-/* import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
- */
-import ContactCreate from "./components/ContactCreate";
-import ContactSearch from "./components/ContactSearch";
-import ContactList from "./components/ContactList";
+import Contacts from "./components/Contacts";
 
 class App extends Component {
   render() {
@@ -22,14 +17,7 @@ class App extends Component {
         </div>
 
         <div className="pure-g">
-          {/* New Contact */}
-          <ContactCreate />
-
-          {/* Search Contact */}
-          <ContactSearch />
-
-          {/* List Contact */}
-          <ContactList />
+          <Contacts />
         </div>
       </div>
     );
