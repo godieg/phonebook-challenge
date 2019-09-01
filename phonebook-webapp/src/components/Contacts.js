@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import TableRow from "./TableRow";
 import swal from "sweetalert";
+import TableRow from "./TableRow";
 
 export default class Contacts extends Component {
   constructor(props) {
@@ -46,6 +46,23 @@ export default class Contacts extends Component {
     this.setState({
       criteria: e.target.value
     });
+  }
+
+  tabRow() {
+    return this.state.contacts.map(function(object, i) {
+      return <TableRow obj={object} key={i} />;
+    });
+  }
+
+  loadContacts() {
+    axios
+      .get("http://localhost:8080/api/contact")
+      .then(response => {
+        this.setState({ contacts: response.data });
+      })
+      .catch(function(error) {
+        swal("Error!", error.message, "error");
+      });
   }
 
   onSubmit(e) {
@@ -97,7 +114,7 @@ export default class Contacts extends Component {
           query: this.state.criteria
         }
       })
-      .then(response => {        
+      .then(response => {
         this.setState({ contacts: response.data });
       })
       .catch(function(error) {
@@ -107,24 +124,6 @@ export default class Contacts extends Component {
     this.setState({
       contacts: []
     });
-  }
-
-  tabRow() {
-    return this.state.contacts.map(function(object, i) {
-      return <TableRow obj={object} key={i} />;
-    });
-  }
-
-  loadContacts() {
-    axios
-      .get("http://localhost:8080/api/contact")
-      .then(response => {
-        
-        this.setState({ contacts: response.data });
-      })
-      .catch(function(error) {
-        swal("Error!", error.message, "error");
-      });
   }
 
   render() {
