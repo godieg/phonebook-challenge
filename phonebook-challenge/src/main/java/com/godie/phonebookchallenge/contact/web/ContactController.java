@@ -2,7 +2,6 @@ package com.godie.phonebookchallenge.contact.web;
 
 import com.godie.phonebookchallenge.contact.domain.Contact;
 import com.godie.phonebookchallenge.contact.service.ContactService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -34,7 +34,7 @@ public class ContactController {
      * @return
      */
     @PostMapping
-    ResponseEntity<Contact> add(@RequestBody Contact contact) {
+    ResponseEntity<Contact> add(@Valid @RequestBody Contact contact) {
         return ResponseEntity.ok( contactService.add(contact) );
     }
 
@@ -55,9 +55,6 @@ public class ContactController {
      */
     @GetMapping("/search")
     ResponseEntity<List<Contact>> search(@RequestParam String query) {
-        /*if (StringUtils.isEmpty(query)) {
-            return ResponseEntity.badRequest().body(null);
-        }*/
         return ResponseEntity.ok(contactService.findByCriteria(query));
     }
 

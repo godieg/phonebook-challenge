@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 /**
@@ -20,12 +21,15 @@ public class Contact implements Serializable {
     private Long id;
 
     @Column(name = "firstname", nullable = false)
+    @NotEmpty(message = "First Name is required")
     private String firstName;
 
     @Column(name = "lastname",nullable = false)
+    @NotEmpty(message = "Last Name is required")
     private String lastName;
 
     @Column(name = "phone", nullable = false)
+    @NotEmpty(message = "Phone is required")
     private String phone;
 
     public Long getId() {
