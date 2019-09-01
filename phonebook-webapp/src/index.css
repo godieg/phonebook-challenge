@@ -31,9 +31,10 @@ body {
 
 .box {
   width: 350px;
-  height: 300px;
+  /* height: 300px; */
+  min-height: 300px;
   margin: 0 auto;
-  padding: 0px 10px;
+  padding: 0px 10px 10px 10px;
   background-color: #eee;
   border-radius: 4px;
 }
@@ -67,4 +68,12 @@ body {
 
 .fa {
   padding-right: 10px;
+}
+
+.phone-width td {
+  min-width: 90px;
+}
+
+.phone-head-width {
+  min-width: 85px;
 }

@@ -1,6 +1,32 @@
 import React, { Component } from "react";
+import axios from "axios";
+import TableRow from "./TableRow";
 
 export default class ListContacts extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contacts: []
+    };
+  }
+  
+  componentDidMount() {
+    axios
+      .get("http://localhost:8080/api/contact")
+      .then(response => {        
+        this.setState({ contacts: response.data });        
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  tabRow() {
+    return this.state.contacts.map(function(object, i) {
+      return <TableRow obj={object} key={i} />;
+    });
+  }
+
   render() {
     return (
       <div className="pure-u-sm-1 pure-u-1-3">
@@ -8,34 +34,16 @@ export default class ListContacts extends Component {
           <h2>
             <i className="fa fa-users"></i> Contacts
           </h2>
+          
           <table className="pure-table">
             <thead>
               <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Phone</th>
+                <th className="phone-head-width">Phone</th>
               </tr>
             </thead>
-
-            <tbody>
-              <tr>
-                <td>Arun</td>
-                <td>Kart</td>
-                <td>415-8679089</td>
-              </tr>
-
-              <tr>
-                <td>Juan</td>
-                <td>Torus</td>
-                <td>301-2390930</td>
-              </tr>
-
-              <tr>
-                <td>Nolux</td>
-                <td>Fernandez</td>
-                <td>310-2930291</td>
-              </tr>
-            </tbody>
+            <tbody>{this.tabRow()}</tbody>
           </table>
         </div>
       </div>

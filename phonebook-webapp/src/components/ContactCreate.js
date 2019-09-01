@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 export default class CreateContact extends Component {
   constructor(props) {
@@ -9,20 +10,20 @@ export default class CreateContact extends Component {
     this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       phone: ""
     };
   }
 
   onChangeFirstName(e) {
     this.setState({
-      first_name: e.target.value
+      firstName: e.target.value
     });
   }
   onChangeLastName(e) {
     this.setState({
-      last_name: e.target.value
+      lastName: e.target.value
     });
   }
   onChangePhone(e) {
@@ -33,16 +34,32 @@ export default class CreateContact extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    
+
     console.log(
-      `The values are ${this.state.first_name}, ${this.state.last_name}, and ${this.state.phone}`
+      `The values are ${this.state.firstName}, ${this.state.lastName}, and ${this.state.phone}`
     );
 
+    const obj = {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      phone: this.state.phone
+    };
+
+    axios
+      .post("http://localhost:8080/api/contact", obj)
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
     this.setState({
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       phone: ""
     });
+    
   }
 
   render() {
@@ -58,14 +75,14 @@ export default class CreateContact extends Component {
                 type="text"
                 className="pure-input-1-2"
                 placeholder="First Name"
-                value={this.state.first_name}
+                value={this.state.firstName}
                 onChange={this.onChangeFirstName}
               />
               <input
                 type="text"
                 className="pure-input-1-2"
                 placeholder="Last Name"
-                value={this.state.last_name}
+                value={this.state.lastName}
                 onChange={this.onChangeLastName}
               />
               <input
